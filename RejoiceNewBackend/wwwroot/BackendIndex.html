@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>測試後台</title>
+    <!-- 先在 head 加入 FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-pO1x8UuvdUVu3g3y7Xn5Pd6h5pY2E6jP4I1NLm4nF0YXu+u6SmD1kJNN6n2lJ3x1c2wIDA5/0hrO6+7mqF9eTQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <h1>所有顧客名單</h1>
+    <table class="table" id="personTable">
+        <thead>
+            <tr>
+                <td></td>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 資料會動態插入在這裡 -->
+        </tbody>
+    </table>
+
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        新增顧客名單
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <label>Name</label>
+                        <input type="text" id="nameInput" class="form-control" />
+                    </div>
+                    <div>
+                        <label>Age</label>
+                        <input type="number" id="ageInput" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="btnAddCustomer">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+            integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module">
+        // 封裝 fetch 函式
+        const getData = async (url) => {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return await response.json();
+            } catch (err) {
+                console.error('Error fetching data:', err);
+                return [];
+            }
+        };
+        const postData = async (url, params = {}) => {
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(params)
+                });
+
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return await response.json();
+            } catch (err) {
+                console.error('Error posting data:', err);
+                return [];
+            }
+        };
+
+
+        // 將資料寫入 table
+        // 將資料寫入 table，加入刪除按鈕
+        const populateTable = (data) => {
+            const tbody = document.querySelector('#personTable tbody');
+            tbody.innerHTML = ''; // 清空舊資料
+
+            data.forEach((person, index) => {
+                const tr = document.createElement('tr');
+
+                // 建立刪除按鈕
+                const deleteBtn = document.createElement('button');
+                deleteBtn.innerText = '刪除';
+                deleteBtn.addEventListener('click', async () => {
+                    // 呼叫刪除 API
+                    try {
+                        const response = await fetch(`/Home/deletePerson/${person.id}`, {
+                            method: 'DELETE'
+                        });
+                        if (!response.ok) throw new Error('Delete failed');
+
+                        // 刪除成功後重新抓取資料更新表格
+                        const allPerson = await getData('/Home/all');
+                        populateTable(allPerson);
+                    } catch (err) {
+                        console.error(err);
+                        alert('刪除失敗');
+                    }
+                });
+
+                tr.innerHTML = `
+            <td></td>  <!-- 刪除按鈕欄位，稍後插入按鈕 -->
+            <th scope="row">${person.id ?? index + 1}</th>
+            <td>${person.name}</td>
+            <td>${person.age}</td>
+        `;
+
+                // 插入刪除按鈕到第一格
+                tr.cells[0].appendChild(deleteBtn);
+
+                tbody.appendChild(tr);
+            });
+        };
+
+
+        // 初始化
+        const init = async () => {
+
+            //寫入顧客資料
+            const allPerson = await getData('/Home/all');
+            populateTable(allPerson);
+
+            const btnAddCustomer = document.getElementById('btnAddCustomer');
+            btnAddCustomer.addEventListener('click', async() => {
+                const currentData = await getData('/Home/all');
+                const id = currentData.length > 0 ? currentData[currentData.length - 1].id + 1 : 1;
+                const name = document.getElementById('nameInput').value;
+                const age = parseInt(document.getElementById('ageInput').value, 10);
+
+                postData('/Home/addPerson', {id, name, age })
+                    .then((newPerson) => {
+                        // 更新表格
+                        return getData('/Home/all');
+                    })
+                    .then((allPerson) => {
+                        populateTable(allPerson);
+                        // 關閉 modal
+                        const modalElement = document.getElementById('exampleModal');
+                        const modalInstance = bootstrap.Modal.getInstance(modalElement);
+                        modalInstance.hide();
+                        // 清空輸入欄位
+                        document.getElementById('nameInput').value = '';
+                        document.getElementById('ageInput').value = '';
+                    });
+            
+            })
+
+        };
+
+        init();
+    </script>
+</body>
+</html>
