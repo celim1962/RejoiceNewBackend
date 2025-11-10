@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Detail</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .detailContainer {
+            width: 100%;
+            height: 30vh;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .detailContent {
+            width: 80%;
+            height: 10%;
+        }
+
+        .peopleDetail {
+            height: 10vh;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .peopleDetail>div:nth-child(n)>p {
+            font-size: x-large;
+            font-weight: 600;
+            margin: 0px;
+        }
+
+        .peopleDetail>div:nth-child(n)>div {
+            font-size: xx-large;
+            font-weight: 600;
+            color: rgb(35, 105, 35);
+        }
+
+
+        .registerInfoContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .registerInfo {
+            width: 70%;
+            text-align: center;
+        }
+
+        th,
+        td {
+            background-color: #A49F99 !important;
+            width: 30%;
+        }
+
+        thead>tr:nth-child(1)>th:first-child {
+            border-radius: 5px 0px 0px 0px;
+        }
+
+        thead>tr:nth-child(1)>th:last-child {
+            border-radius: 0px 5px 0px 0px;
+        }
+
+        tbody>tr:last-child>td:first-child {
+            border-radius: 0px 0px 0px 5px;
+        }
+
+        tbody>tr:last-child>td:last-child {
+            border-radius: 0px 0px 5px 0px;
+        }
+
+        tbody>tr>td:last-child {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        tr>td:nth-child(2)::before {
+            content: '$';
+        }
+
+        th {
+            background-color: #685742 !important;
+            color: white !important;
+        }
+
+        tr:last-child>td {
+            background-color: #666462 !important;
+            color: white;
+        }
+
+
+
+        .custom-select {
+            position: relative;
+            width: 200px;
+            font-family: sans-serif;
+        }
+
+        .custom-select button {
+            width: 50%;
+            padding: 8px;
+            text-align: left;
+            border: none;
+            background: #767676;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px !important;
+        }
+
+        .custom-select button:hover {
+            opacity: .8;
+        }
+
+        .options {
+            position: absolute;
+            top: 100%;
+            left: 25%;
+            width: 50%;
+            right: 0;
+            background: #767676;
+            /* border: 1px solid #ccc; */
+            border-top: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+
+            border-radius: 5px !important;
+            z-index: 0;
+        }
+
+        .options.open {
+            width: 50%;
+            max-height: 200px;
+            z-index: 200;
+            /* 展開高度 */
+        }
+
+        .options div {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .options div:hover {
+            background: #f0f0f0;
+        }
+
+
+        .formContainer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form>div>label {
+            color: #161616 !important;
+        }
+
+        form>div>input {
+            border: none !important;
+            background-color: #656463 !important;
+            color: white !important;
+        }
+
+        .group {
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- #region Menu -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top glass-element">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 linkItem">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">日本旅遊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://rejoicetour.ittms.com.tw/">各國旅遊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">台灣旅遊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">關於我們</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #endregion -->
+
+    <!-- #region header -->
+    <div class="detailContainer">
+        <div class="detailContent">
+            <div class="detailHeader">
+                <div>
+                    <p>團號：1234567890</p>
+                </div>
+
+                <h2>【雪舞紛飛北海道５日】保住三晚溫泉、函館雪飄夜景、企鵝散步、三合一戲雪趣、北國彩燈祭、螃蟹溫泉</h2>
+            </div>
+            <hr>
+            <div class="peopleDetail">
+                <div>
+                    <p>出發日期</p>
+                    <div>2025/01/01</div>
+                </div>
+                <div>
+                    <p>旅遊天數</p>
+                    <div>5天</div>
+                </div>
+                <div>
+                    <p>可售團位</p>
+                    <div style="color: rgb(167, 39, 39);">31個</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #endregion -->
+
+    <!-- #region Info -->
+    <div class="registerInfoContainer">
+        <h2>選擇報名人數</h2>
+        <table class="table table-secondary table-borderless registerInfo">
+            <thead>
+                <tr>
+                    <th scope="col col-6">項目</th>
+                    <th scope="col">價格</th>
+                    <th scope="col">人數</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>大人</td>
+                    <td>43800</td>
+                    <td>
+                        <div class="form-floating">
+                            <div class="custom-select">
+                                <button id="selectBtn0">選擇人數</button>
+                                <div class="options" id="options0">
+                                    <div data-value="1">1</div>
+                                    <div data-value="2">2</div>
+                                    <div data-value="3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>小孩佔床</td>
+                    <td>43800</td>
+                    <td>
+                        <div class="form-floating">
+                            <div class="custom-select">
+                                <button id="selectBtn1">選擇人數</button>
+                                <div class="options" id="options1">
+                                    <div data-value="1">1</div>
+                                    <div data-value="2">2</div>
+                                    <div data-value="3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>小孩不佔床</td>
+                    <td>39800</td>
+                    <td>
+                        <div class="form-floating">
+                            <div class="custom-select">
+                                <button id="selectBtn2">選擇人數</button>
+                                <div class="options" id="options2">
+                                    <div data-value="1">1</div>
+                                    <div data-value="2">2</div>
+                                    <div data-value="3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>嬰兒</td>
+                    <td>6500</td>
+                    <td>
+                        <div class="form-floating">
+                            <div class="custom-select">
+                                <button id="selectBtn3">選擇人數</button>
+                                <div class="options" id="options3">
+                                    <div data-value="1">1</div>
+                                    <div data-value="2">2</div>
+                                    <div data-value="3">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: white;">結算資訊</td>
+                    <td>1</td>
+                    <td>
+                        1
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- #endregion -->
+
+    <!-- #region form -->
+    <div class="formContainer">
+        <h2>報名資訊</h2>
+        <form style="width: 40%;display: flex;flex-direction: column;">
+            <div class="form-group group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+
+            <div class="form-group group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="xxx@xxx.com">
+            </div>
+            <div class="form-group group">
+                <label for="phone">Phone No.</label>
+                <input type="tel" class="form-control" id="phone" placeholder="xxxx-xxx-xxx">
+            </div>
+            <div class="form-group group">
+                <label for="note">Note</label>
+                <input type="text" class="form-control" id="note" placeholder="Your Note">
+            </div>
+
+
+
+
+            <button type="submit" class="btn btn-primary group">送出</button>
+        </form>
+    </div>
+    <!-- #endregion -->
+
+    <script>
+        for (let i = 0; i < 4; i++) {
+            let btn = document.getElementById('selectBtn' + i);
+            let options = document.getElementById('options' + i);
+
+            btn.addEventListener('click', () => {
+                options.classList.toggle('open');
+            });
+
+            options.querySelectorAll('div').forEach(opt => {
+                opt.addEventListener('click', () => {
+                    btn.textContent = opt.textContent;
+                    options.classList.remove('open');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.custom-select')) {
+                    options.classList.remove('open');
+                }
+            });
+        }
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <meta name="google" content="notranslate">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- #region Menu -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top glass-element">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 linkItem">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">日本旅遊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://rejoicetour.ittms.com.tw/">各國旅遊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">台灣旅遊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">關於我們</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #endregion -->
+
+    <!-- #region 輪播圖 -->
+    <div class="photoContainer">
+        <div id="carouselExampleAutoplaying" class="carousel slide carouselSlide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/img1.svg" class="d-block" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/img2.svg" class="d-block " alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/img3.svg" class="d-block" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="carouselDescription">
+        介紹訊息
+    </div>
+
+    <!-- #endregion -->
+
+
+    <!-- <div class="textArea">
+        <div class="jumbotron jumbotron-fluid intro">
+            <div class="container">
+                <h2>Fluid jumbotron</h2>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                    This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                </p>
+
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                    This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="textArea">
+        <div class="jumbotron jumbotron-fluid intro">
+            <div class="container">
+                <h2>Fluid jumbotron</h2>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                    This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                </p>
+
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                    This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="textArea">
+        <div class="jumbotron jumbotron-fluid intro">
+            <div class="container">
+                <h2>Fluid jumbotron</h2>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                    This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                </p>
+
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                    This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="textArea">
+        <div class="jumbotron jumbotron-fluid intro">
+            <div class="container">
+                <h2>Fluid jumbotron</h2>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                    This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                </p>
+
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                    This is a modified jumbotron that occupies the entire horizontal space of its parent.
+                </p>
+            </div>
+        </div>
+    </div> -->
+    <div class="contentContainer">
+        <div class="contentArea">
+            <div>熱門推薦</div>
+            <div>
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+            </div>
+            <div style="display: none;">
+                <a href="#" class="btn btn-outline-dark">
+                    了解更多 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="contentArea">
+            <div>日本半自助小包團</div>
+            <div>
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-dark">
+                    了解更多 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="contentArea">
+            <div>出國旅遊</div>
+            <div>
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+            </div>
+            <div style="display: none;">
+                <a href="#" class="btn btn-outline-dark">
+                    了解更多 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="contentArea">
+            <div>台灣旅遊</div>
+            <div>
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+                <img src="./img/img1.jpg" alt="">
+            </div>
+            <div style="display: none;">
+                <a href="#" class="btn btn-outline-dark">
+                    了解更多 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="contentArea contentDescription" >
+            <div>企業員旅服務</div>
+            <div>
+                <img src="./img/img1.jpg" alt="">
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consectetur molestiae perspiciatis
+                    deleniti ab quidem sapiente laborum earum suscipit voluptates quos architecto possimus dicta autem
+                    quasi consequuntur ducimus quia aliquid?</p>
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-dark">
+                    填寫需求 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="contentArea contentDescription">
+            <div>旅遊需求</div>
+            <div>
+                <img src="./img/img1.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consectetur molestiae perspiciatis
+                    deleniti ab quidem sapiente laborum earum suscipit voluptates quos architecto possimus dicta autem
+                    quasi consequuntur ducimus quia aliquid?</p>
+
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-dark">
+                    了解更多 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div>
+            <label for="">瑞恩國際旅行社有限公司</label>
+            <a href="#">首頁</a>
+            <a href="#">關於我們</a>
+            <a href="#">辦理簽證</a>
+            <a href="#">契約書</a>
+        </div>
+        <div>
+            <div>
+                <div>註冊編號：xxx</div>
+                <div>品保會員：xxx</div>
+                <div>統一編號：xxx</div>
+                <div>代表人: xxx</div>
+                <div>練落人: xxx</div>
+            </div>
+            <div>
+                <div>地址：xxx</div>
+                <div>電話：xx-xxx-xxx</div>
+                <div>傳真：xx-xxx-xxx</div>
+                <div>信箱：xxx</div>
+                <div>服務時間:xxx</div>
+            </div>
+            <div>
+                <div>
+                    <label for="">社群追蹤</label>
+                    <div>
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-square-youtube"></i>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-line"></i>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+                <div>
+                    <label for="">CreditCard</label>
+                    <div>
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
