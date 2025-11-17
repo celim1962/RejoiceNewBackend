@@ -7,344 +7,11 @@
     <title>Bootstrap demo</title>
     <meta name="google" content="notranslate">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <style>
-       * {
-           user-select: none;
-       }
-
-       /* ====== Glassy Navbar (鏡面透明) ====== */
-       :root {
-           --glass-bg: rgba(255, 255, 255, 0.08);
-           --glass-border: rgba(255, 255, 255, 0.35);
-           --glass-shadow: rgba(0, 0, 0, 0.25);
-           --glass-blur: 14px;
-           --glass-saturate: 160%;
-       }
-
-       /* 針對你目前這組 class：.navbar.navbar-expand-lg.bg-body-tertiary.sticky-top */
-       .navbar.bg-body-tertiary.sticky-top {
-           position: sticky;
-           /* 保留頂部吸附 */
-           top: 0;
-           background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06)) !important;
-           backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-           -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-           border: 1px solid var(--glass-border);
-           border-radius: 18px;
-           margin: 10px;
-           /* 讓邊緣的玻璃感更明顯 */
-           padding-inline: 8px;
-           /* 稍微縮進，與圓角一致 */
-           box-shadow: 0 8px 24px var(--glass-shadow);
-           background-clip: padding-box;
-       }
-
-           /* 亮面反光（細緻斜向高光） */
-           .navbar.bg-body-tertiary.sticky-top::before {
-               content: "";
-               position: absolute;
-               inset: 0;
-               pointer-events: none;
-               border-radius: inherit;
-               background: linear-gradient(60deg, transparent 0%, rgba(255, 255, 255, 0.22) 18%, rgba(255, 255, 255, 0.10) 28%, transparent 40%);
-               mask-image: radial-gradient(120% 60% at -10% -20%, black 40%, transparent 60%);
-           }
-
-           /* 讓容器內容不貼邊，視覺更高級 */
-           .navbar.bg-body-tertiary.sticky-top .container-fluid {
-               padding-inline: 10px;
-           }
-
-           /* Brand 與連結的微霓虹/玻璃對比 */
-           .navbar.bg-body-tertiary.sticky-top .navbar-brand,
-           .navbar.bg-body-tertiary.sticky-top .nav-link {
-               text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-               padding: 5px;
-               border-radius: 5px;
-           }
-
-               /* Hover/Active 狀態更像玻璃上的高光 */
-               .navbar.bg-body-tertiary.sticky-top .nav-link:hover,
-               .navbar.bg-body-tertiary.sticky-top .nav-link:focus {
-                   background: rgba(255, 255, 255, 0.12);
-                   border-radius: 10px;
-               }
-
-               .navbar.bg-body-tertiary.sticky-top .nav-link.active {
-                   background: rgba(255, 255, 255, 0.18);
-                   border-radius: 10px;
-               }
-
-           /* Dropdown 也一起玻璃化 */
-           .navbar.bg-body-tertiary.sticky-top .dropdown-menu {
-               background: var(--glass-bg);
-               backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-               -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-               border: 1px solid var(--glass-border);
-               border-radius: 16px;
-               box-shadow: 0 12px 28px var(--glass-shadow);
-           }
-
-           .navbar.bg-body-tertiary.sticky-top .dropdown-item:hover,
-           .navbar.bg-body-tertiary.sticky-top .dropdown-item:focus {
-               background-color: rgba(255, 255, 255, 0.18);
-           }
-
-       .dropdown-item {
-           color: rgb(153, 153, 153);
-       }
-
-       /* 搜尋框與按鈕調整為半透明玻璃 */
-       .navbar.bg-body-tertiary.sticky-top .form-control {
-           background: rgba(255, 255, 255, 0.18);
-           border: 1px solid rgba(255, 255, 255, 0.35);
-           color: inherit;
-           backdrop-filter: blur(8px);
-           -webkit-backdrop-filter: blur(8px);
-       }
-
-           .navbar.bg-body-tertiary.sticky-top .form-control::placeholder {
-               color: rgba(255, 255, 255, 0.8);
-           }
-
-       .navbar.bg-body-tertiary.sticky-top .btn {
-           background: rgba(255, 255, 255, 0.18);
-           border: 1px solid rgba(255, 255, 255, 0.35);
-           backdrop-filter: blur(8px);
-           -webkit-backdrop-filter: blur(8px);
-       }
-
-       /* 深色模式優化（自動配合系統） */
-       @media (prefers-color-scheme: dark) {
-           :root {
-               --glass-bg: rgba(20, 20, 20, 0.35);
-               --glass-border: rgba(255, 255, 255, 0.18);
-               --glass-shadow: rgba(0, 0, 0, 0.45);
-           }
-
-           .navbar.bg-body-tertiary.sticky-top {
-               background: linear-gradient(180deg, rgba(30, 30, 30, 0.45), rgba(20, 20, 20, 0.25)) !important;
-           }
-
-               .navbar.bg-body-tertiary.sticky-top .form-control::placeholder {
-                   color: rgba(255, 255, 255, 0.6);
-               }
-       }
-
-       /* 無 backdrop-filter 瀏覽器的退場樣式 */
-       @supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
-
-           .navbar.bg-body-tertiary.sticky-top,
-           .navbar.bg-body-tertiary.sticky-top .dropdown-menu {
-               background: rgba(161, 49, 49, 0.75) !important;
-           }
-       }
-
-
-       .carouselDescription {
-           font-size: large;
-           color: #666666;
-           text-align: center;
-           margin-top: 8px;
-           height: 15vh;
-       }
-
-       body {
-           background-color: #778f96;
-       }
-
-
-       .contentContainer {
-           display: flex;
-           justify-content: center;
-       }
-
-       .contentArea {
-           /* border: 1px solid blue; */
-           margin: 20px 5px;
-           border-radius: 18px;
-           width: 95%;
-           background-color: #38576a;
-           padding-bottom: 1vw;
-       }
-
-           .contentArea > div:nth-child(1) {
-               font-size: xx-large;
-               font-weight: bold;
-               color: white;
-               margin-left: 12px;
-               margin-bottom: 12px;
-               padding: 1vw;
-           }
-
-           .contentArea > div:nth-child(2) {
-               display: flex;
-               justify-content: space-around;
-               margin-bottom: 2vh;
-           }
-
-               .contentArea > div:nth-child(2) img {
-                   width: 20vw;
-                   height: 20vw;
-                   height: auto;
-                   border-radius: 12px;
-               }
-
-               .contentArea > div:nth-child(2) p {
-                   color: white;
-               }
-
-           .contentArea > div:nth-child(3) {
-               display: flex;
-               justify-content: flex-end;
-               width: 95%;
-               margin-bottom: 2vh;
-           }
-
-               .contentArea > div:nth-child(3) > a {
-                   border: 1px solid white;
-                   color: white;
-               }
-
-           .contentArea > i {
-               font-size: 48px;
-               color: #555555;
-               margin-top: 8vh;
-           }
-
-               .contentArea > i:hover {
-                   color: #222222;
-                   cursor: pointer;
-               }
-
-       .contentDescription > div:nth-child(2) > img {
-           margin-right: 5vw;
-       }
-
-       .contentDescription > div:nth-child(2) {
-           font-size: x-large;
-           font-weight: bold;
-           color: #333333;
-           margin-left: 12px;
-           margin-bottom: 12px;
-       }
-
-
-
-       footer {
-           background-color: #1E1E24;
-           color: white;
-           height: 30vh;
-       }
-
-           footer > div:nth-child(1) {
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               gap: 40px;
-           }
-
-               footer > div:nth-child(1) a, footer div:nth-child(1) label {
-                   font-size: x-large;
-                   text-decoration: none;
-               }
-
-               footer > div:nth-child(1) a, footer div:nth-child(2) label {
-                   font-size: x-large;
-                   text-decoration: none;
-               }
-
-           footer > div:nth-child(2) {
-               display: flex;
-               justify-content: space-around;
-               align-items: top;
-               height: 70%;
-           }
-
-               footer > div:nth-child(2) > div {
-                   width: 30%;
-                   display: flex;
-                   flex-direction: column;
-                   justify-content: flex-start;
-                   align-items: start;
-                   gap: 2vh;
-               }
-
-                   footer > div:nth-child(2) > div:nth-child(3) {
-                       /* border: 1px solid blue; */
-                   }
-
-                       footer > div:nth-child(2) > div:nth-child(3) i {
-                           font-size: x-large;
-                       }
-
-                           footer > div:nth-child(2) > div:nth-child(3) i:hover {
-                               color: #AAAAFF;
-                               cursor: pointer;
-                           }
-
-
-
-
-       * {
-           transition: .4s !important;
-           font-family: 'system-ui', sans-serif;
-           font-size: large;
-       }
-
-       /* #region  menu*/
-       li {
-           margin-top: 10px;
-           margin-left: 15px;
-           margin-right: 15px;
-       }
-
-       .nav-link {
-           color: rgb(236, 236, 236);
-       }
-
-       .linkItem {
-           width: 100%;
-           display: flex;
-           justify-content: center;
-       }
-
-       /* #endregion */
-
-       /* #region 輪播圖 */
-       .photoContainer {
-           padding: 15px;
-       }
-
-       img {
-           width: 100vw;
-           height: 50vh;
-       }
-
-       .carouselSlide {
-           border-radius: 15px;
-           overflow: hidden;
-       }
-
-       /* #endregion */
-
-
-       .textArea {
-           border-radius: 15px;
-           padding: 15px;
-       }
-
-       .intro {
-           border: 1.5px solid black;
-           border-radius: 15px;
-           padding: 15px;
-       }
-
-   </style>
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./RejoiceNew/style.css">
 </head>
 
 <body>
@@ -352,10 +19,11 @@
     <!-- #region Menu -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top glass-element">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#"><img src="./RejoiceNew/img/logo.png"
+                    style="width: 120px;height: 60px;background-color: white;" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -409,12 +77,12 @@
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="prev">
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                    data-bs-slide="next">
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -422,7 +90,20 @@
     </div>
 
     <div class="carouselDescription">
-        介紹訊息
+        <div style="width: 80%;">
+            <h1>最輕鬆的自由行玩法</h1>
+            <p>半自助小包團，彈性自主與輕鬆便利同時擁有</p>
+            <br>
+            <p>不論是一場精彩的員工旅遊、還是與親友共享的私人小團出遊，
+                我們為你量身打造最適合的包團行程。
+                <br>
+                瑞恩旅遊專注於客製化行程設計，
+                讓每一趟旅程都貼近你的需求，無論人多人少、玩法想自由或輕鬆，
+                你都能安心交給我們，一站式搞定！
+            </p>
+        </div>
+
+
     </div>
 
     <!-- #endregion -->
@@ -489,7 +170,7 @@
         <div class="contentArea">
             <div>顧客測試</div>
             <div style="display:flex;justify-content:start" id="customList">
-                
+
 
             </div>
 
@@ -520,7 +201,17 @@
 
     <div class="contentContainer">
         <div class="contentArea">
-            <div>日本半自助小包團</div>
+            <div>
+                <h1>日本半自助小包團</h1>
+                <p>人數不多，也能包團出遊？</p>
+                <p>不想要跟團，但有時要湊到團體包團16人、20人，實在有些難度。
+                    在瑞恩旅遊，您不用將就與他人併團，仍能自組小團出發！(最佳建議6位以上) <br>
+                    雖沒領隊隨行，但到當地即有專車&司機等候迎接，
+                    中文包車服務更是讓您玩得輕鬆又安心！
+                    這般輕鬆的自由行規劃，您不用再費心做功課！
+                    直接與我們聯絡就可以了！
+                </p>
+            </div>
             <div>
                 <img src="./RejoiceNew/img/img1.jpg" alt="">
                 <img src="./RejoiceNew/img/img1.jpg" alt="">
@@ -537,7 +228,11 @@
 
     <div class="contentContainer">
         <div class="contentArea">
-            <div>出國旅遊</div>
+            <div>
+                <h1>專題旅行</h1>
+                <p>出國旅行</p>
+                <p>精心規劃更深度、更精緻的出國行程，為您打造難忘的美好旅程</p>
+            </div>
             <div>
                 <img src="./RejoiceNew/img/img1.jpg" alt="">
                 <img src="./RejoiceNew/img/img1.jpg" alt="">
@@ -554,7 +249,11 @@
 
     <div class="contentContainer">
         <div class="contentArea">
-            <div>台灣旅遊</div>
+            <div>
+                <h1>專題旅行</h1>
+                <p>國內旅行</p>
+                <p>不一樣的方式玩台灣，讓我們透過旅行更愛家鄉地土吧！</p>
+            </div>
             <div>
                 <img src="./RejoiceNew/img/img1.jpg" alt="">
                 <img src="./RejoiceNew/img/img1.jpg" alt="">
@@ -571,39 +270,39 @@
 
     <div class="contentContainer">
         <div class="contentArea contentDescription">
-            <div>企業員旅服務</div>
             <div>
-                <img src="./img/img1.jpg" alt="">
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consectetur molestiae perspiciatis
-                    deleniti ab quidem sapiente laborum earum suscipit voluptates quos architecto possimus dicta autem
-                    quasi consequuntur ducimus quia aliquid?
+                <h1>企業員旅服務</h1>
+                <p>訂製專屬您的員工旅遊</p>
+                <p>我們為企業提供國內外的團體行程方案，亦可依需求&預算來客製規劃。無論全公司、員工自組，各種人數均可包團出行。 <br>
+                    並且歡迎免費簽約成為特約商，照顧員工享旅遊優惠福利。<br>
+                    期望成為您的旅遊協助好夥伴，輕鬆規劃每趟旅程，創造美好回憶。
                 </p>
+            </div>
+            <div>
+                <!-- <img src="" alt=""> -->
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-dark">
+                    了解更多 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="contentArea contentDescription">
+            <div>
+                <h1>填寫需求</h1>
+                <p>即刻需求！您的專屬旅程！</p>
+                <p>無論您想要跟團旅遊、大小包團、員工旅遊，都歡迎線上填寫需求表單，讓我們服務專員與您聯繫，提供最佳提案與您進行討論！
+                </p>
+            </div>
+            <div>
+                <!-- <img src="./RejoiceNew/img/img1.jpg" alt=""> -->
             </div>
             <div>
                 <a href="#" class="btn btn-outline-dark">
                     填寫需求 <i class="fa-solid fa-angle-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="contentContainer">
-        <div class="contentArea contentDescription">
-            <div>旅遊需求</div>
-            <div>
-                <img src="./RejoiceNew/img/img1.jpg" alt="">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consectetur molestiae perspiciatis
-                    deleniti ab quidem sapiente laborum earum suscipit voluptates quos architecto possimus dicta autem
-                    quasi consequuntur ducimus quia aliquid?
-                </p>
-
-            </div>
-            <div>
-                <a href="#" class="btn btn-outline-dark">
-                    了解更多 <i class="fa-solid fa-angle-right"></i>
                 </a>
             </div>
         </div>
@@ -617,22 +316,22 @@
             <a href="#">首頁</a>
             <a href="#">關於我們</a>
             <a href="#">辦理簽證</a>
-            <a href="#">契約書</a>
+            <a href="#">契約書下載</a>
         </div>
         <div>
             <div>
-                <div>註冊編號：xxx</div>
-                <div>品保會員：xxx</div>
-                <div>統一編號：xxx</div>
-                <div>代表人: xxx</div>
-                <div>練落人: xxx</div>
+                <div>註冊編號：甲種旅行社8403</div>
+                <div>品保會員：(北)2397</div>
+                <div>統一編號：42741316</div>
+                <div>代表人: 林新約</div>
+                <div>練落人: 林新約</div>
             </div>
             <div>
-                <div>地址：xxx</div>
-                <div>電話：xx-xxx-xxx</div>
-                <div>傳真：xx-xxx-xxx</div>
-                <div>信箱：xxx</div>
-                <div>服務時間:xxx</div>
+                <div>地址：台北市中山區建國北路二段147號14樓之5</div>
+                <div>電話：02-2508 1270</div>
+                <div>傳真：02-2508 1270</div>
+                <div>信箱：ratour01@gmail.com</div>
+                <div>營業時間:周一~周五 9:30~18:00</div>
             </div>
             <div>
                 <div>
@@ -660,8 +359,8 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
-            integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         let customList = document.getElementById("customList");
         window.onload = async () => {

@@ -1,4 +1,5 @@
-﻿* {
+﻿
+* {
     user-select: none;
 }
 
@@ -133,11 +134,15 @@
 
 .carouselDescription {
     font-size: large;
-    color: #666666;
+    color: white;
     text-align: center;
     margin-top: 8px;
-    height: 15vh;
+    min-height: 15vh;
+
+    display: flex;
+    justify-content: center;
 }
+
 
 body {
     background-color: #778f96;
@@ -167,6 +172,10 @@ body {
         padding: 1vw;
     }
 
+    .contentArea > div:nth-child(1)>p:nth-child(2){
+        font-size: x-large;
+    }
+
     .contentArea > div:nth-child(2) {
         display: flex;
         justify-content: space-around;
@@ -187,7 +196,7 @@ body {
     .contentArea > div:nth-child(3) {
         display: flex;
         justify-content: flex-end;
-        width: 95%;
+        width: 98%;
         margin-bottom: 2vh;
     }
 
@@ -231,18 +240,30 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        /* gap: 40px; */
     }
 
-        footer > div:nth-child(1) a, footer div:nth-child(1) label {
-            font-size: x-large;
-            text-decoration: none;
-        }
+    footer div:nth-child(1) label{
+        width: 60%;
+        margin-left: 10vw;
+    }
 
-        footer > div:nth-child(1) a, footer div:nth-child(2) label {
-            font-size: x-large;
-            text-decoration: none;
-        }
+    footer > div:nth-child(1)>a{
+        display: flex;
+        justify-content: space-between;
+        width: 8%;
+    }
+
+    footer > div:nth-child(1) a, footer div:nth-child(1) label {
+        font-size: x-large;
+        text-decoration: none;
+    }
+    
+
+    footer > div:nth-child(1) a, footer div:nth-child(2) label {
+        font-size: x-large;
+        text-decoration: none;
+    }
 
     footer > div:nth-child(2) {
         display: flex;
@@ -329,3 +350,4 @@ img {
     border-radius: 15px;
     padding: 15px;
 }
+
