@@ -19,7 +19,8 @@
     <!-- #region Menu -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top glass-element">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#"><img src="./img/logo.png"
+                    style="width: 120px;height: 60px;background-color: white;" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -31,7 +32,7 @@
                         <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">日本旅遊</a>
+                        <a class="nav-link" href="./JapanTour.html">日本旅遊</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://rejoicetour.ittms.com.tw/">各國旅遊</a>
@@ -61,7 +62,6 @@
         </div>
     </nav>
     <!-- #endregion -->
-
     <!-- #region 輪播圖 -->
     <div class="photoContainer">
         <div id="carouselExampleAutoplaying" class="carousel slide carouselSlide" data-bs-ride="carousel">
@@ -90,12 +90,23 @@
     </div>
 
     <div class="carouselDescription">
-        介紹訊息
+        <div style="width: 80%;">
+            <h1>最輕鬆的自由行玩法</h1>
+            <p>半自助小包團，彈性自主與輕鬆便利同時擁有</p>
+            <br>
+            <p>不論是一場精彩的員工旅遊、還是與親友共享的私人小團出遊，
+                我們為你量身打造最適合的包團行程。
+                <br>
+                瑞恩旅遊專注於客製化行程設計，
+                讓每一趟旅程都貼近你的需求，無論人多人少、玩法想自由或輕鬆，
+                你都能安心交給我們，一站式搞定！
+            </p>
+        </div>
+
+
     </div>
 
     <!-- #endregion -->
-
-
     <!-- <div class="textArea">
         <div class="jumbotron jumbotron-fluid intro">
             <div class="container">
@@ -157,6 +168,22 @@
     </div> -->
     <div class="contentContainer">
         <div class="contentArea">
+            <div>顧客測試</div>
+            <div style="display:flex;justify-content:start" id="customList">
+
+
+            </div>
+
+
+            <div style="display: none;">
+                <a href="#" class="btn btn-outline-dark">
+                    了解更多 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="contentContainer">
+        <div class="contentArea">
             <div>熱門推薦</div>
             <div>
                 <img src="./img/img1.jpg" alt="">
@@ -174,7 +201,17 @@
 
     <div class="contentContainer">
         <div class="contentArea">
-            <div>日本半自助小包團</div>
+            <div>
+                <h1>日本半自助小包團</h1>
+                <p>人數不多，也能包團出遊？</p>
+                <p>不想要跟團，但有時要湊到團體包團16人、20人，實在有些難度。
+                    在瑞恩旅遊，您不用將就與他人併團，仍能自組小團出發！(最佳建議6位以上) <br>
+                    雖沒領隊隨行，但到當地即有專車&司機等候迎接，
+                    中文包車服務更是讓您玩得輕鬆又安心！
+                    這般輕鬆的自由行規劃，您不用再費心做功課！
+                    直接與我們聯絡就可以了！
+                </p>
+            </div>
             <div>
                 <img src="./img/img1.jpg" alt="">
                 <img src="./img/img1.jpg" alt="">
@@ -191,7 +228,11 @@
 
     <div class="contentContainer">
         <div class="contentArea">
-            <div>出國旅遊</div>
+            <div>
+                <h1>專題旅行</h1>
+                <p>出國旅行</p>
+                <p>精心規劃更深度、更精緻的出國行程，為您打造難忘的美好旅程</p>
+            </div>
             <div>
                 <img src="./img/img1.jpg" alt="">
                 <img src="./img/img1.jpg" alt="">
@@ -208,7 +249,11 @@
 
     <div class="contentContainer">
         <div class="contentArea">
-            <div>台灣旅遊</div>
+            <div>
+                <h1>專題旅行</h1>
+                <p>國內旅行</p>
+                <p>不一樣的方式玩台灣，讓我們透過旅行更愛家鄉地土吧！</p>
+            </div>
             <div>
                 <img src="./img/img1.jpg" alt="">
                 <img src="./img/img1.jpg" alt="">
@@ -218,24 +263,6 @@
             <div style="display: none;">
                 <a href="#" class="btn btn-outline-dark">
                     了解更多 <i class="fa-solid fa-angle-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="contentContainer">
-        <div class="contentArea contentDescription" >
-            <div>企業員旅服務</div>
-            <div>
-                <img src="./img/img1.jpg" alt="">
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consectetur molestiae perspiciatis
-                    deleniti ab quidem sapiente laborum earum suscipit voluptates quos architecto possimus dicta autem
-                    quasi consequuntur ducimus quia aliquid?</p>
-            </div>
-            <div>
-                <a href="#" class="btn btn-outline-dark">
-                    填寫需求 <i class="fa-solid fa-angle-right"></i>
                 </a>
             </div>
         </div>
@@ -243,17 +270,39 @@
 
     <div class="contentContainer">
         <div class="contentArea contentDescription">
-            <div>旅遊需求</div>
             <div>
-                <img src="./img/img1.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, consectetur molestiae perspiciatis
-                    deleniti ab quidem sapiente laborum earum suscipit voluptates quos architecto possimus dicta autem
-                    quasi consequuntur ducimus quia aliquid?</p>
-
+                <h1>企業員旅服務</h1>
+                <p>訂製專屬您的員工旅遊</p>
+                <p>我們為企業提供國內外的團體行程方案，亦可依需求&預算來客製規劃。無論全公司、員工自組，各種人數均可包團出行。 <br>
+                    並且歡迎免費簽約成為特約商，照顧員工享旅遊優惠福利。<br>
+                    期望成為您的旅遊協助好夥伴，輕鬆規劃每趟旅程，創造美好回憶。
+                </p>
+            </div>
+            <div>
+                <!-- <img src="" alt=""> -->
             </div>
             <div>
                 <a href="#" class="btn btn-outline-dark">
                     了解更多 <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div class="contentArea contentDescription">
+            <div>
+                <h1>填寫需求</h1>
+                <p>即刻需求！您的專屬旅程！</p>
+                <p>無論您想要跟團旅遊、大小包團、員工旅遊，都歡迎線上填寫需求表單，讓我們服務專員與您聯繫，提供最佳提案與您進行討論！
+                </p>
+            </div>
+            <div>
+                <!-- <img src="./img/img1.jpg" alt=""> -->
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-dark">
+                    填寫需求 <i class="fa-solid fa-angle-right"></i>
                 </a>
             </div>
         </div>
@@ -267,22 +316,22 @@
             <a href="#">首頁</a>
             <a href="#">關於我們</a>
             <a href="#">辦理簽證</a>
-            <a href="#">契約書</a>
+            <a href="#">契約書下載</a>
         </div>
         <div>
             <div>
-                <div>註冊編號：xxx</div>
-                <div>品保會員：xxx</div>
-                <div>統一編號：xxx</div>
-                <div>代表人: xxx</div>
-                <div>練落人: xxx</div>
+                <div>註冊編號：甲種旅行社8403</div>
+                <div>品保會員：(北)2397</div>
+                <div>統一編號：42741316</div>
+                <div>代表人: 林新約</div>
+                <div>練落人: 林新約</div>
             </div>
             <div>
-                <div>地址：xxx</div>
-                <div>電話：xx-xxx-xxx</div>
-                <div>傳真：xx-xxx-xxx</div>
-                <div>信箱：xxx</div>
-                <div>服務時間:xxx</div>
+                <div>地址：台北市中山區建國北路二段147號14樓之5</div>
+                <div>電話：02-2508 1270</div>
+                <div>傳真：02-2508 1270</div>
+                <div>信箱：ratour01@gmail.com</div>
+                <div>營業時間:周一~周五 9:30~18:00</div>
             </div>
             <div>
                 <div>
@@ -312,6 +361,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
         integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let customList = document.getElementById("customList");
+        window.onload = async () => {
+            let data = await fetch('./Home/all')
+            data = await data.json();
+            console.log(data);
+
+            customList.innerHTML += `
+
+                ${data.map(item => `
+                    <div style="display: flex; width: 10%;margin:10px;background-color:white;border-radius:5px;">
+                        <div style="display:flex;justify-content:center;align-items:center;text-align:center;margin-right:5px">
+                            <div style="margin-right:5px">名字:</div>
+                            <div>${item.name}</div>
+                        </div>
+                        
+                        <div style="display:flex;justify-content:center;align-items:center;text-align:center">
+                            <div style="margin-right:5px">年紀:</div>
+                            <div>${item.age}</div>
+                        </div>
+                    </div>
+                `).join('')}`
+        }
+    </script>
 </body>
 
 </html>
