@@ -14,6 +14,10 @@ builder.Services.AddDbContext<TestDBContext>(options =>
     options.UseSqlite("Data Source=myapp.db"));
 
 builder.Services.AddScoped<RepoPerson>();
+builder.Services.AddScoped<RepoTripCategory>();
+builder.Services.AddScoped<RepoTripDetail>();
+builder.Services.AddScoped<RepoTripDetailPrice>();
+builder.Services.AddScoped<RepoTripDetailSchedule>();
 
 
 
