@@ -156,17 +156,17 @@ namespace RejoiceNewBackend.Controllers
         public async Task<ActionResult> UpdateTripDetailAsync(int id, TripDetail tripDetail)
         {
             if (id != tripDetail.Id)
-            {
                 return BadRequest(new { message = "ID mismatch." });
-            }
-            var existingTripDetail = await _repoTripDetail.GetByIdAsync(id);
-            if (existingTripDetail == null)
-            {
+
+            var existing = await _repoTripDetail.GetByIdAsync(id);
+            if (existing == null)
                 return NotFound(new { message = "TripDetail not found." });
-            }
-            await _repoTripDetail.UpdateAsync(tripDetail);
+
+            await _repoTripDetail.UpdateAsync(existing, tripDetail);
+
             return Ok(new { message = "TripDetail updated successfully." });
         }
+
 
         [HttpDelete("deleteTripDetail/{id}")]
         public async Task<ActionResult> DeleteTripDetailAsync(int id)

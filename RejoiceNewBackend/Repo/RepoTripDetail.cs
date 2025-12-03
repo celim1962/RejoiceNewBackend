@@ -24,12 +24,21 @@ namespace RejoiceNewBackend.Repo
             return tripDetail;
         }
 
-        public async Task<bool> UpdateAsync(Model.TripDetail tripDetail)
+        public async Task<bool> UpdateAsync(Model.TripDetail existing, Model.TripDetail incoming)
         {
-            _context.TripDetails.Update(tripDetail);
+            // 將 incoming 的值複製到 existing（EF 已追蹤 existing → 不會衝突）
+            existing.TripCategoryId = incoming.TripCategoryId;
+            existing.Title = incoming.Title;
+            existing.Location = incoming.Location;
+            existing.Description = incoming.Description;
+            existing.HomePageImgUrl = incoming.HomePageImgUrl;
+            existing.DetailImgUrl = incoming.DetailImgUrl;
+            existing.MaxOrderPeople = incoming.MaxOrderPeople;
+
             await _context.SaveChangesAsync();
             return true;
         }
+
 
         public async Task<bool> DeleteAsync(int id)
         {

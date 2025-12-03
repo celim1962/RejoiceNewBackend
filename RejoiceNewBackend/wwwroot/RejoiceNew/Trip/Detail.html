@@ -91,13 +91,6 @@
             color: white !important;
         }
 
-        tr:last-child>td {
-            background-color: #666462 !important;
-            color: white;
-        }
-
-
-
         .custom-select {
             position: relative;
             width: 200px;
@@ -203,20 +196,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">關於我們</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li> -->
                 </ul>
             </div>
         </div>
@@ -228,24 +207,24 @@
         <div class="detailContent">
             <div class="detailHeader">
                 <div>
-                    <p>團號：1234567890</p>
+                    <p id="detailId">團號：</p>
                 </div>
 
-                <h2>【雪舞紛飛北海道５日】保住三晚溫泉、函館雪飄夜景、企鵝散步、三合一戲雪趣、北國彩燈祭、螃蟹溫泉</h2>
+                <h2 id="title"></h2>
             </div>
             <hr>
             <div class="peopleDetail">
                 <div>
                     <p>出發日期</p>
-                    <div>2025/01/01</div>
+                    <div id="detailStratDate"></div>
                 </div>
                 <div>
                     <p>旅遊天數</p>
-                    <div>5天</div>
+                    <div id="detailDays"></div>
                 </div>
                 <div>
                     <p>可售團位</p>
-                    <div style="color: rgb(167, 39, 39);">31個</div>
+                    <div style="color: rgb(167, 39, 39);" id="detailMaxPeople"></div>
                 </div>
             </div>
         </div>
@@ -254,148 +233,82 @@
 
     <!-- #region Info -->
     <div class="registerInfoContainer">
-        <h2>選擇報名人數</h2>
+        <h2>報名資訊</h2>
         <table class="table table-secondary table-borderless registerInfo">
             <thead>
                 <tr>
                     <th scope="col col-6">項目</th>
                     <th scope="col">價格</th>
-                    <th scope="col">人數</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="detailPrice">
+                <!-- <tr>
+                    <td>大人</td>
+                    <td>43800</td>
+                </tr>
                 <tr>
                     <td>大人</td>
                     <td>43800</td>
-                    <td>
-                        <div class="form-floating">
-                            <div class="custom-select">
-                                <button id="selectBtn0">選擇人數</button>
-                                <div class="options" id="options0">
-                                    <div data-value="1">1</div>
-                                    <div data-value="2">2</div>
-                                    <div data-value="3">3</div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
                 </tr>
                 <tr>
-                    <td>小孩佔床</td>
+                    <td>大人</td>
                     <td>43800</td>
-                    <td>
-                        <div class="form-floating">
-                            <div class="custom-select">
-                                <button id="selectBtn1">選擇人數</button>
-                                <div class="options" id="options1">
-                                    <div data-value="1">1</div>
-                                    <div data-value="2">2</div>
-                                    <div data-value="3">3</div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>小孩不佔床</td>
-                    <td>39800</td>
-                    <td>
-                        <div class="form-floating">
-                            <div class="custom-select">
-                                <button id="selectBtn2">選擇人數</button>
-                                <div class="options" id="options2">
-                                    <div data-value="1">1</div>
-                                    <div data-value="2">2</div>
-                                    <div data-value="3">3</div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>嬰兒</td>
-                    <td>6500</td>
-                    <td>
-                        <div class="form-floating">
-                            <div class="custom-select">
-                                <button id="selectBtn3">選擇人數</button>
-                                <div class="options" id="options3">
-                                    <div data-value="1">1</div>
-                                    <div data-value="2">2</div>
-                                    <div data-value="3">3</div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="color: white;">結算資訊</td>
-                    <td>1</td>
-                    <td>
-                        1
-                    </td>
-                </tr>
-
+                </tr> -->
             </tbody>
         </table>
     </div>
     <!-- #endregion -->
 
-    <!-- #region form -->
-    <div class="formContainer">
-        <h2>報名資訊</h2>
-        <form style="width: 40%;display: flex;flex-direction: column;">
-            <div class="form-group group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Your Name">
-            </div>
-
-            <div class="form-group group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="xxx@xxx.com">
-            </div>
-            <div class="form-group group">
-                <label for="phone">Phone No.</label>
-                <input type="tel" class="form-control" id="phone" placeholder="xxxx-xxx-xxx">
-            </div>
-            <div class="form-group group">
-                <label for="note">Note</label>
-                <input type="text" class="form-control" id="note" placeholder="Your Note">
-            </div>
-
-
-
-
-            <button type="submit" class="btn btn-primary group">送出</button>
-        </form>
-    </div>
-    <!-- #endregion -->
-
     <script>
-        for (let i = 0; i < 4; i++) {
-            let btn = document.getElementById('selectBtn' + i);
-            let options = document.getElementById('options' + i);
-
-            btn.addEventListener('click', () => {
-                options.classList.toggle('open');
-            });
-
-            options.querySelectorAll('div').forEach(opt => {
-                opt.addEventListener('click', () => {
-                    btn.textContent = opt.textContent;
-                    options.classList.remove('open');
-                });
-            });
-
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.custom-select')) {
-                    options.classList.remove('open');
-                }
-            });
+        const loadData = async (url)=>{
+            let response = await fetch(url);
+            let data = await response.json();
+            return data;
         }
 
+        window.onload = async ()=>{
+            let detail =await loadData('../../Home/tripDetails');
+            detail = detail[0];
+            showDetail(detail);
 
+            let detailPrice = await loadData(`../../Home/tripDetailPrices/${detail.id}`);
+            showDetailPrice(detailPrice);
+
+            let detailschedule = await loadData(`../../Home/tripDetailSchedules/${detail.id}`);
+            showDetailSchedule(detailschedule);
+            
+        }
+
+        const showDetail = (detail)=>{
+            document.getElementById('detailId').innerText += detail.id;
+            document.getElementById('title').innerText = detail.title;
+
+            let maxPeople = document.getElementById('detailMaxPeople');
+            maxPeople.innerText = detail.maxOrderPeople + '個';
+        }
+
+        const showDetailPrice = (prices)=>{
+            let detailPrice = document.getElementById('detailPrice');
+            detailPrice.innerHTML = '';
+            prices.map(price=>{
+                detailPrice.innerHTML += `
+                <tr>
+                    <td>${price.priceType}</td>
+                    <td>${price.priceAmount}</td>
+                </tr>
+                `
+            })
+            
+        }
+
+        const showDetailSchedule = (schedules)=>{
+            let detailStartDate = document.getElementById('detailStratDate');
+            detailStartDate.innerText = schedules[0].startTime.slice(0,10);
+            
+            let detailDays = document.getElementById('detailDays');
+            detailDays.innerText = schedules.length + '天';
+            
+        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
         integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
