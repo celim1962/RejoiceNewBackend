@@ -19,8 +19,9 @@
     <!-- #region Menu -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top glass-element">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html"><img src="./img/logo.png"
-                    style="width: 120px;height: 60px;background-color: white;" alt=""></a>
+            <a class="navbar-brand" href="./index.html">
+                <img src="./img/logo.png" style="width: 120px;height: 60px;background-color: white;" alt="">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -97,7 +98,8 @@
             <h1>最輕鬆的自由行玩法</h1>
             <p>半自助小包團，彈性自主與輕鬆便利同時擁有</p>
             <br>
-            <p>不論是一場精彩的員工旅遊、還是與親友共享的私人小團出遊，
+            <p>
+                不論是一場精彩的員工旅遊、還是與親友共享的私人小團出遊，
                 我們為你量身打造最適合的包團行程。
                 <br>
                 瑞恩旅遊專注於客製化行程設計，
@@ -189,10 +191,26 @@
         <div class="contentArea">
             <div>熱門推薦</div>
             <div>
-                <img src="./img/Index/HotRecommand1.png" alt="">
-                <img src="./img/Index/HotRecommand2.png" alt="">
-                <img src="./img/Index/HotRecommand3.png" alt="">
-                <img src="./img/Index/HotRecommand4.png" alt="">
+                <div>
+                    <img src="./img/Index/HotRecommand1.png" alt="">
+                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
+                    <p style="text-align: center;">$130000</p>
+                </div>
+                <div>
+                    <img src="./img/Index/HotRecommand2.png" alt="">
+                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
+                    <p style="text-align: center;">$130000</p>
+                </div>
+                                <div>
+                    <img src="./img/Index/HotRecommand3.png" alt="">
+                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
+                    <p style="text-align: center;">$130000</p>
+                </div>
+                                <div>
+                    <img src="./img/Index/HotRecommand4.png" alt="">
+                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
+                    <p style="text-align: center;">$130000</p>
+                </div>
             </div>
             <div style="display: none;">
                 <a href="#" class="btn btn-outline-dark">
@@ -207,7 +225,8 @@
             <div>
                 <h1>日本半自助小包團</h1>
                 <p>人數不多，也能包團出遊？</p>
-                <p>不想要跟團，但有時要湊到團體包團16人、20人，實在有些難度。
+                <p>
+                    不想要跟團，但有時要湊到團體包團16人、20人，實在有些難度。
                     在瑞恩旅遊，您不用將就與他人併團，仍能自組小團出發！(最佳建議6位以上) <br>
                     雖沒領隊隨行，但到當地即有專車&司機等候迎接，
                     中文包車服務更是讓您玩得輕鬆又安心！
@@ -325,7 +344,8 @@
             <div>
                 <h1>企業員旅服務</h1>
                 <p>訂製專屬您的員工旅遊</p>
-                <p>我們為企業提供國內外的團體行程方案，亦可依需求&預算來客製規劃。無論全公司、員工自組，各種人數均可包團出行。 <br>
+                <p>
+                    我們為企業提供國內外的團體行程方案，亦可依需求&預算來客製規劃。無論全公司、員工自組，各種人數均可包團出行。 <br>
                     並且歡迎免費簽約成為特約商，照顧員工享旅遊優惠福利。<br>
                     期望成為您的旅遊協助好夥伴，輕鬆規劃每趟旅程，創造美好回憶。
                 </p>
@@ -346,7 +366,8 @@
             <div>
                 <h1>填寫需求</h1>
                 <p>即刻需求！您的專屬旅程！</p>
-                <p>無論您想要跟團旅遊、大小包團、員工旅遊，都歡迎線上填寫需求表單，讓我們服務專員與您聯繫，提供最佳提案與您進行討論！
+                <p>
+                    無論您想要跟團旅遊、大小包團、員工旅遊，都歡迎線上填寫需求表單，讓我們服務專員與您聯繫，提供最佳提案與您進行討論！
                 </p>
             </div>
             <div>
@@ -422,19 +443,19 @@
 
             customList.innerHTML += `
 
-                ${data.map(item => `
-                    <div style="display: flex; width: 10%;margin:10px;background-color:white;border-radius:5px;">
-                        <div style="display:flex;justify-content:center;align-items:center;text-align:center;margin-right:5px">
-                            <div style="margin-right:5px">名字:</div>
-                            <div>${item.name}</div>
+                    ${data.map(item => `
+                        <div style="display: flex; width: 10%;margin:10px;background-color:white;border-radius:5px;">
+                            <div style="display:flex;justify-content:center;align-items:center;text-align:center;margin-right:5px">
+                                <div style="margin-right:5px">名字:</div>
+                                <div>${item.name}</div>
+                            </div>
+
+                            <div style="display:flex;justify-content:center;align-items:center;text-align:center">
+                                <div style="margin-right:5px">年紀:</div>
+                                <div>${item.age}</div>
+                            </div>
                         </div>
-                        
-                        <div style="display:flex;justify-content:center;align-items:center;text-align:center">
-                            <div style="margin-right:5px">年紀:</div>
-                            <div>${item.age}</div>
-                        </div>
-                    </div>
-                `).join('')}`
+                    `).join('')}`
         }
     </script>
 </body>
