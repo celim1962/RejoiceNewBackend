@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Detail</title>
     <link rel="stylesheet" href="../style.css">
@@ -28,17 +28,17 @@
             justify-content: space-evenly;
         }
 
-            .peopleDetail > div:nth-child(n) > p {
-                font-size: x-large;
-                font-weight: 600;
-                margin: 0px;
-            }
+        .peopleDetail>div:nth-child(n)>p {
+            font-size: x-large;
+            font-weight: 600;
+            margin: 0px;
+        }
 
-            .peopleDetail > div:nth-child(n) > div {
-                font-size: xx-large;
-                font-weight: 600;
-                color: rgb(35, 105, 35);
-            }
+        .peopleDetail>div:nth-child(n)>div {
+            font-size: xx-large;
+            font-weight: 600;
+            color: rgb(35, 105, 35);
+        }
 
 
         .registerInfoContainer {
@@ -59,29 +59,29 @@
             width: 30%;
         }
 
-        thead > tr:nth-child(1) > th:first-child {
+        thead>tr:nth-child(1)>th:first-child {
             border-radius: 5px 0px 0px 0px;
         }
 
-        thead > tr:nth-child(1) > th:last-child {
+        thead>tr:nth-child(1)>th:last-child {
             border-radius: 0px 5px 0px 0px;
         }
 
-        tbody > tr:last-child > td:first-child {
+        tbody>tr:last-child>td:first-child {
             border-radius: 0px 0px 0px 5px;
         }
 
-        tbody > tr:last-child > td:last-child {
+        tbody>tr:last-child>td:last-child {
             border-radius: 0px 0px 5px 0px;
         }
 
-        tbody > tr > td:last-child {
+        tbody>tr>td:last-child {
             display: flex;
             justify-content: center;
             width: 100%;
         }
 
-        tr > td:nth-child(2)::before {
+        tr>td:nth-child(2)::before {
             content: '$';
         }
 
@@ -96,20 +96,20 @@
             font-family: sans-serif;
         }
 
-            .custom-select button {
-                width: 50%;
-                padding: 8px;
-                text-align: left;
-                border: none;
-                background: #767676;
-                color: white;
-                cursor: pointer;
-                border-radius: 5px !important;
-            }
+        .custom-select button {
+            width: 50%;
+            padding: 8px;
+            text-align: left;
+            border: none;
+            background: #767676;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px !important;
+        }
 
-                .custom-select button:hover {
-                    opacity: .8;
-                }
+        .custom-select button:hover {
+            opacity: .8;
+        }
 
         .options {
             position: absolute;
@@ -127,21 +127,21 @@
             z-index: 0;
         }
 
-            .options.open {
-                width: 50%;
-                max-height: 200px;
-                z-index: 200;
-                /* 展開高度 */
-            }
+        .options.open {
+            width: 50%;
+            max-height: 200px;
+            z-index: 200;
+            /* 展開高度 */
+        }
 
-            .options div {
-                padding: 8px;
-                cursor: pointer;
-            }
+        .options div {
+            padding: 8px;
+            cursor: pointer;
+        }
 
-                .options div:hover {
-                    background: #f0f0f0;
-                }
+        .options div:hover {
+            background: #f0f0f0;
+        }
 
 
         .formContainer {
@@ -151,11 +151,11 @@
             align-items: center;
         }
 
-        form > div > label {
+        form>div>label {
             color: #161616 !important;
         }
 
-        form > div > input {
+        form>div>input {
             border: none !important;
             background-color: #656463 !important;
             color: white !important;
@@ -173,8 +173,8 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -263,8 +263,8 @@
         }
 
         window.onload = async () => {
-            let detail = await loadData('../../Home/tripDetails');
-            detail = detail[0];
+            let detail = await loadData('../../Home/tripDetail/' + new URLSearchParams(window.location.search).get('id'));
+             console.log(detail);
             showDetail(detail);
 
             let detailPrice = await loadData(`../../Home/tripDetailPrices/${detail.id}`);
@@ -307,8 +307,8 @@
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
-            integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

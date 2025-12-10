@@ -12,6 +12,11 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
+    <style>
+        .SelectedImg:hover {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -190,28 +195,7 @@
     <div class="contentContainer">
         <div class="contentArea">
             <div>熱門推薦</div>
-            <div>
-                <div>
-                    <img src="./img/Index/HotRecommand1.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-                <div>
-                    <img src="./img/Index/HotRecommand2.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-                                <div>
-                    <img src="./img/Index/HotRecommand3.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-                                <div>
-                    <img src="./img/Index/HotRecommand4.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-            </div>
+            <div id="hotRecommandTrips"></div>
             <div style="display: none;">
                 <a href="#" class="btn btn-outline-dark">
                     了解更多 <i class="fa-solid fa-angle-right"></i>
@@ -222,41 +206,9 @@
 
     <div class="contentContainer">
         <div class="contentArea">
-            <div>
-                <h1>日本半自助小包團</h1>
-                <p>人數不多，也能包團出遊？</p>
-                <p>
-                    不想要跟團，但有時要湊到團體包團16人、20人，實在有些難度。
-                    在瑞恩旅遊，您不用將就與他人併團，仍能自組小團出發！(最佳建議6位以上) <br>
-                    雖沒領隊隨行，但到當地即有專車&司機等候迎接，
-                    中文包車服務更是讓您玩得輕鬆又安心！
-                    這般輕鬆的自由行規劃，您不用再費心做功課！
-                    直接與我們聯絡就可以了！
-                </p>
-            </div>
-            <div>
-                <div>
-                    <img src="./img/Index/SmallGroup1.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
+            <div>日本半自助小包團</div>
+            <div id="smallGroupJapan"></div>
 
-                <div>
-                    <img src="./img/Index/SmallGroup2.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-                <div>
-                    <img src="./img/Index/SmallGroup3.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-                <div>
-                    <img src="./img/Index/SmallGroup4.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-            </div>
             <div>
                 <a href="#" class="btn btn-outline-dark">
                     了解更多 <i class="fa-solid fa-angle-right"></i>
@@ -267,33 +219,9 @@
 
     <div class="contentContainer">
         <div class="contentArea">
-            <div>
-                <h1>專題旅行</h1>
-                <p>出國旅行</p>
-                <p>精心規劃更深度、更精緻的出國行程，為您打造難忘的美好旅程</p>
-            </div>
-            <div>
-                <div>
-                    <img src="./img/Index/ForeignTrip1.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-                <div>
-                    <img src="./img/Index/ForeignTrip2.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-                <div>
-                    <img src="./img/Index/ForeignTrip3.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-                <div>
-                    <img src="./img/Index/ForeignTrip4.png" alt="">
-                    <p style="text-align: center;">敘述敘述敘述敘述敘述敘述敘述</p>
-                    <p style="text-align: center;">$130000</p>
-                </div>
-            </div>
+            <div>專題旅行-國外</div>
+            <div id="ProjectTrip"></div>
+
             <div style="display: none;">
                 <a href="#" class="btn btn-outline-dark">
                     了解更多 <i class="fa-solid fa-angle-right"></i>
@@ -435,28 +363,48 @@
         integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        let customList = document.getElementById("customList");
-        window.onload = async () => {
-            let data = await fetch('./Home/all')
-            data = await data.json();
-            console.log(data);
-
-            customList.innerHTML += `
-
-                    ${data.map(item => `
-                        <div style="display: flex; width: 10%;margin:10px;background-color:white;border-radius:5px;">
-                            <div style="display:flex;justify-content:center;align-items:center;text-align:center;margin-right:5px">
-                                <div style="margin-right:5px">名字:</div>
-                                <div>${item.name}</div>
-                            </div>
-
-                            <div style="display:flex;justify-content:center;align-items:center;text-align:center">
-                                <div style="margin-right:5px">年紀:</div>
-                                <div>${item.age}</div>
-                            </div>
-                        </div>
-                    `).join('')}`
+        const loadData = async (url) => {
+            let response = await fetch(url);
+            let data = await response.json();
+            return data;
         }
+
+        const showHotRecommand = (tagName, trips, prices) => {
+            let hotRecommandTrips = document.getElementById(tagName);
+            hotRecommandTrips.innerHTML = '';
+            trips.map(trip => {
+                let price = prices.filter(p => p.tripDetailId == trip.id && p.priceType == '大人');
+
+                if (price.length > 0) {
+                    price = price[0].priceAmount;
+                } else {
+                    price = 'N/A';
+                }
+                console.log()
+                hotRecommandTrips.innerHTML += `
+                <div class='SelectedImg'>
+                    <a href="./Trip/Detail.html?id=${trip.id}">
+                        <img src="${trip.homePageImgUrl}" alt="">
+                    </a>
+                    <p style="text-align: center;">${trip.title}</p>
+                    <p style="text-align: center;">$${price}</p>
+                </div>
+                `
+            })
+        }
+
+        window.onload = async () => {
+            let detailTrips = await loadData(`../../Home/tripDetails`);
+            let detailTripPrices = await loadData(`../../Home/tripDetailPrices/All`);
+            detailTrips = detailTrips.filter(trip => trip.tripCategoryId > 0);
+            console.log(detailTripPrices);
+
+            showHotRecommand('hotRecommandTrips', detailTrips.filter(trip => trip.tripCategoryId == 1), detailTripPrices);
+            showHotRecommand('smallGroupJapan', detailTrips.filter(trip => trip.tripCategoryId == 2), detailTripPrices);
+            showHotRecommand('ProjectTrip', detailTrips.filter(trip => trip.tripCategoryId == 3), detailTripPrices);
+        }
+
+
     </script>
 </body>
 

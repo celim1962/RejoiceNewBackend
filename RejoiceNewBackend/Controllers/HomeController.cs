@@ -189,6 +189,12 @@ namespace RejoiceNewBackend.Controllers
         #endregion
 
         #region TripDetailPrice
+        [HttpGet("tripDetailPrices/All")]
+        public async Task<ActionResult<IEnumerable<TripDetailPrice>>> GetAllTripDetailPrices()
+        {
+            return Ok(await _repoTripDetailPrice.GetAllAsync());
+        }
+
         [HttpGet("tripDetailPrices/{tripDetailId}")]
         public async Task<ActionResult<IEnumerable<TripDetailPrice>>> GetTripDetailPricesByTripDetailId(int tripDetailId)
         {
